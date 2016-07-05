@@ -27,7 +27,7 @@ It's also worth noting that Winbuntu will copy your dotfile before running scrip
 
 The *environment.sh* file contians the following structure towardst the top of the file:
 ```
-#####
+#####The p
 # The environment configuration
 #####
 typeset -A config # init array
@@ -43,3 +43,7 @@ You will want to configure these settings to match your needs. The settings are:
 * **gitRepo** The git repository containing your PACKAGES file, scripts, and dotfiles
 * **workingDir** You probably won't need to change this, but this is where Winbuntu clones your git repository to
 * **guiCommand** This is the command Winbuntu uses to start the Linux GUI on our X server.
+
+# Current Issues
+
+The only issues I am aware of thus far are with trying to run certain Linux GUIs, specifically the big desktop environments (like XFCE and Gnome). The problem is the lake of D-bus. So far I have not been able to find a successful way to run a D-bus dameon between the Linux system and the X server. 
