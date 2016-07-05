@@ -46,4 +46,4 @@ You will want to configure these settings to match your needs. The settings are:
 
 # Current Issues
 
-The only issues I am aware of thus far are with trying to run certain Linux GUIs, specifically the big desktop environments (like XFCE and Gnome). The problem is the lake of D-bus. So far I have not been able to find a successful way to run a D-bus dameon between the Linux system and the X server. 
+The only issues I am aware of thus far are with trying to run certain Linux GUIs, specifically the big desktop environments (like XFCE and Gnome). The problem is the lack of D-bus. So far I have not been able to find a successful way to run a D-bus dameon between the Linux system and the X server. 
