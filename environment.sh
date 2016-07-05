@@ -111,7 +111,7 @@ function gui()
 	if [ -z "${config[guiCommand]//}" ]; then
 		echo -e "${RED}No gui command specified. Skipping...${NC}"
 	else
-		DISPLAY=localhost:0 exec ${config[guiCommand]} &
+		DISPLAY=localhost:0 exec ${config[guiCommand]}
 	fi
 }
 
