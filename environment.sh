@@ -37,6 +37,17 @@ function install_git()
 	fi
 }
 
+# Installs Xterm
+function install_xterm()
+{
+	echo "Installing xterm..."
+	sudo -s apt-get -y install xterm
+
+	if type "xterm" > /dev/null; then
+		echo -e "${GREEN}Xterm successfully installed${NC}"
+	fi
+}
+
 #####
 # Core Functions
 #####
@@ -49,6 +60,13 @@ function check_required_apps()
 		install_git
 	else
 		echo -e "${GREEN}Found git${NC}"
+	fi
+
+	if ! type "xterm" > /dev/null; then
+		echo -e "${RED}Xterm not found${NC}"
+		install_xterm
+	else
+		echo -e "${GREEN}Found Xterm${NC}"
 	fi
 }
 
