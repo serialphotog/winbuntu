@@ -23,6 +23,11 @@ config=( # set default values in config array
 )
 
 #####
+# Global Vars
+#####
+SESSION_CONF_PATH='/etc/dbus-1/session.conf'
+
+#####
 # Installer Functions
 #####
 
@@ -133,6 +138,33 @@ function gui()
 	fi
 }
 
+# Applies the dbus fix
+function dbus_fix()
+{
+	# Delete old session.conf if exists
+	if [ -e $SESSION_CONF_PATH ]; then
+		sudo rm $SESSION_CONF_PATH
+	fi
+
+	#Download new session.conf and apply fix
+	SESSION_CONF_GIST='https://gist.githubusercontent.com/serialphotog/444917d8e8e327d873cc5bf1a0fa2232/raw/ea271023ae692d9e1eff875531fd90f543935eaf/winbuntu-session.conf'
+	curl -k $SESSION_CONF_GIST > '/tmp/session.conf'
+	sudo -s cp '/tmp/session.conf' $SESSION_CONF_PATH
+}
+
+# Checks if the dbus fix has been applied
+function check_dbus_fix()
+{
+	DBUS_FIX='<listen>tcp:host=localhost,port=0</listen>'
+
+	if [ -e $SESSION_CONF_PATH ] && grep -q $DBUS_FIX $SESSION_CONF_PATH; then
+		echo -e "${GREEN}Detected dbus fix.${NC}"
+	else
+		echo -e "${RED}No dbus fix found. Applying it now...${NC}"
+		dbus_fix
+	fi
+}
+
 # The main runtime 
 function main()
 {
@@ -141,6 +173,7 @@ function main()
 	install_packages
 	dotfiles
 	run_scripts
+	check_dbus_fix
 	gui
 }
 
