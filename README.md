@@ -49,7 +49,7 @@ You will want to configure these settings to match your needs. The settings are:
 The Beta-1.0 release of Winbuntu makes quite a few chagnes. 
 
 * We now use Xming instead of a Cygwin install. This is a much more streamlined approach, which takes up quite a bit less space on disk.
-* We now use a new install, which does the work of install Xming and the Winbuntu system for you.
+* We now use a new installer, which does the work of installing Xming and the Winbuntu system for you.
 * We now have a fix for dbus. Launching your Winbuntu environment will automatically apply the fix for you. This allows us to run a lot more apps, including some larger desktop environments (XFCE is confirmed to run)
 * Winbuntu is officially liscensed under the [GPL V2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 * The old Winbuntu Cygwin Installer has been deprecated.
