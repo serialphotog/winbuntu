@@ -7,8 +7,8 @@
 
 :: Get the path of our Winbuntu install
 FOR /F "usebackq tokens=2,* skip=2" %%L IN (
-    `reg query "HKLM\SOFTWARE\winbuntu" /v WinbuntuPath`
+    `reg query "HKLM\SOFTWARE\Winbuntu" /v InstallPath`
 ) DO SET installPath=%%M
 
-start %installPath%"\bin\XWin.exe" -listen tcp
+start %installPath%"\xming\Xming.exe"
 start "" "bash" "environment.sh"
