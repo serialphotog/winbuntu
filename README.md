@@ -8,7 +8,7 @@ To use Winbuntu, you will first need to [set up WSL](http://www.howtogeek.com/24
 
 ## Setting things up
 
-To get started, you will need to [download and run the Winbuntu Cygwin Installer](http://www.hackeradam17.com/download-winbuntu/). This is just a simple Windows installer that sets up the minimum Cygwin configuration required to run our GUI. You can find the source for the Installer [here](https://github.com/serialphotog/winbuntu-cygwin-installer).
+To get started, you will need to [download and run the Winbuntu Installer](http://www.hackeradam17.com/download-winbuntu/). This is just a simple Windows installer that sets up Xming and install the Winbuntu files.
 
 For this to be at all useful, you will need a git repository with your dotfiles and install scripts. You can [use mine](https://github.com/serialphotog/winbuntu-config) to help get you started. There are 3 things this is used for:
 
@@ -44,6 +44,12 @@ You will want to configure these settings to match your needs. The settings are:
 * **workingDir** You probably won't need to change this, but this is where Winbuntu clones your git repository to
 * **guiCommand** This is the command Winbuntu uses to start the Linux GUI on our X server.
 
-# Current Issues
+# Changes in Beta-1.0
 
-The only issues I am aware of thus far are with trying to run certain Linux GUIs, specifically the big desktop environments (like XFCE and Gnome). The problem is the lack of D-bus. So far I have not been able to find a successful way to run a D-bus daemon between the Linux system and the X server. 
+The Beta-1.0 release of Winbuntu makes quite a few chagnes. 
+
+* We now use Xming instead of a Cygwin install. This is a much more streamlined approach, which takes up quite a bit less space on disk.
+* We now use a new install, which does the work of install Xming and the Winbuntu system for you.
+* We now have a fix for dbus. Launching your Winbuntu environment will automatically apply the fix for you. This allows us to run a lot more apps, including some larger desktop environments (XFCE is confirmed to run)
+* Winbuntu is officially liscensed under the [GPL V2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+* The old Winbuntu Cygwin Installer has been deprecated.
