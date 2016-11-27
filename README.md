@@ -8,7 +8,7 @@ To use Winbuntu, you will first need to [set up WSL](http://www.howtogeek.com/24
 
 ## Setting things up
 
-To get started, you will need to [download and run the Winbuntu Installer](http://www.hackeradam17.com/download-winbuntu/). This is just a simple Windows installer that sets up Xming and install the Winbuntu files.
+To get started, you will need to [download and run the Winbuntu Installer](https://github.com/serialphotog/winbuntu/releases/tag/1.0.0). This is just a simple Windows installer that sets up Xming and install the Winbuntu files.
 
 For this to be at all useful, you will need a git repository with your dotfiles and install scripts. You can [use mine](https://github.com/serialphotog/winbuntu-config) to help get you started. There are 3 things this is used for:
 
