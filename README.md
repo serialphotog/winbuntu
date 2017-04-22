@@ -25,9 +25,9 @@ It's also worth noting that Winbuntu will copy your dotfile before running scrip
 
 ### environment.sh Settings
 
-The *environment.sh* file contians the following structure towardst the top of the file:
+The *environment.sh* file contians the following structure towards the top of the file:
 ```
-#####The p
+#####
 # The environment configuration
 #####
 typeset -A config # init array
